@@ -1,0 +1,63 @@
+.instructor-img {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.technology-icon img {
+    width: 60%;
+}
+.technology-icon {
+    transition: transform 0.3s ease;
+}
+.technology-icon:hover {
+    transform: scale(1.1);
+}
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer .linea {
+    height: 80px;
+    width: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#inicio {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    #inicio .bg-gray-900 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        min-height: 100vh;
+    }
+    
+    #inicio .max-w-lg {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #inicio .flex-wrap {
+        justify-content: center;
+    }
+    
+    @media (max-width: 374px) {
+        #inicio h2 {
+            font-size: 1.75rem;
+        }
+        
+        #inicio p {
+            font-size: 0.875rem;
+        }
+    }
+}

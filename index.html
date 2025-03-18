@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos ADSO 2774163</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.3/cdn.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <nav class="bg-gray-800 fixed w-full z-10" x-data="{ isOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-5">
+                    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="assets/logoSena.png" class="h-8" alt="Flowbite Logo" />
+                    </a>
+                    <h1 class="text-xl font-bold text-blue-400">ADSO 2774163</h1>
+                </div>
+
+                <div class="hidden md:flex items-center">
+                    <div class="flex items-center space-x-4">
+                        <a href="#inicio"
+                            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+                        <a href="#instructores"
+                            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Instructores</a>
+                        <a href="#tecnologias"
+                            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tecnologías</a>
+                        <a href="#proyectos"
+                            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Proyectos</a>
+                    </div>
+                </div>
+
+                <div class="flex md:hidden">
+                    <button @click="isOpen = !isOpen"
+                        class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="isOpen" class="md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#instructores"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Instructores</a>
+                <a href="#tecnologias"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Tecnologías</a>
+                <a href="#proyectos"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Proyectos</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="relative min-h-screen pt-16 ">
+        <div x-data="{ activeSlide: 0, slides: [0, 1, 2, 3], autoplay: null }"
+            x-init="autoplay = setInterval(() => { activeSlide = activeSlide === slides.length - 1 ? 0 : activeSlide + 1 }, 5000)"
+            class="relative h-screen overflow-hidden">
+    
+            <div class="flex flex-col md:flex-row h-full">
+                <div class="w-full md:w-2/6 bg-gray-900 h-full flex items-center p-6 md:p-12">
+                    <div class="flex flex-col max-w-lg mx-auto md:mx-0">
+                        <div class="inline-block bg-blue-500 px-4 py-1 rounded-full mb-3">
+                            <p class="text-white text-sm font-medium">Proyectos ADSO 2774163</p>
+                        </div>
+                        
+                        <h2 class="text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
+                            Bienvenidos a nuestros proyectos
+                            de Análisis y Desarrollo de software
+                        </h2>
+                        <p class="text-gray-300 text-base mb-6">
+                            Descubre los mejores proyectos desarrollados por los aprendices del programa ADSO 2774163
+                            del SENA
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#instructores"
+                                class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-full text-sm font-medium transition duration-300">
+                                Mirar más
+                            </a>
+                            <a href="#proyectos"
+                                class="bg-transparent border border-white hover:bg-white hover:text-black text-white py-2 px-6 rounded-full text-sm font-medium transition duration-300">
+                                Ver proyectos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block absolute left-1/3 h-full w-16 z-10" 
+                    style="background: linear-gradient(to right, rgba(17, 24, 39, 1), rgba(17, 24, 39, 0)); transform: translateX(-50%);">
+                </div>
+                
+                <div class="hidden md:block w-full md:w-4/6 h-full relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
+                    <!-- Imagen 1 -->
+                    <div x-show="activeSlide === 0" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+                        x-transition:leave-end="opacity-0" class="absolute inset-0 h-full w-full">
+                        <img src="assets/reinado.jpeg" class="object-cover h-full w-full" alt="Proyecto 1">
+                    </div>
+                    <!-- Imagen 2 -->
+                    <div x-show="activeSlide === 1" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+                        x-transition:leave-end="opacity-0" class="absolute inset-0 h-full w-full">
+                        <img src="assets/ingles.jpeg" class="object-cover h-full w-full" alt="Proyecto 2">
+                    </div>
+                    <!-- Imagen 3 -->
+                    <div x-show="activeSlide === 2" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+                        x-transition:leave-end="opacity-0" class="absolute inset-0 h-full w-full">
+                        <img src="assets/torneo.jpeg" class="object-cover h-full w-full" alt="Proyecto 3">
+                    </div>
+                    <!-- Imagen 4 -->
+                    <div x-show="activeSlide === 3" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+                        x-transition:leave-end="opacity-0" class="absolute inset-0 h-full w-full">
+                        <img src="assets/sanpedro.jpeg" class="object-cover h-full w-full" alt="Proyecto 4">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="absolute bottom-4 left-0 right-0 hidden md:flex justify-center space-x-3 z-20">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <button @click="activeSlide = index"
+                        :class="{'bg-blue-500': activeSlide === index, 'bg-white bg-opacity-30': activeSlide !== index}"
+                        class="w-3 h-3 rounded-full focus:outline-none transition-colors duration-300">
+                    </button>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <section id="instructores" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-blue-400">Nuestros Instructores</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-12 md:space-y-0 md:space-x-20">
+                <div class="flex flex-col items-center">
+                    <div class="instructor-img mb-4 border-4 border-blue-500">
+                        <img src="" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold">Moises Cartagena</h3>
+                    <p class="text-gray-400">Ingeniero de Sistemas</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="instructor-img mb-4 border-4 border-blue-500">
+                        <img src="" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold">Jimmy Lombana</h3>
+                    <p class="text-gray-400">Ingeniero de Sistemas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologias" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-blue-400">Tecnologías Utilizadas</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
+                <div class="technology-icon flex flex-col items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                        <img src="assets/html.png">
+                    </div>
+                    <p class="text-center">HTML</p>
+                </div>
+                <div class="technology-icon flex flex-col items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                        <img src="assets/css3.png" alt="">
+                    </div>
+                    <p class="text-center">CSS</p>
+                </div>
+                <div class="technology-icon flex flex-col items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                        <img src="assets/js.png" alt="">
+                    </div>
+                    <p class="text-center">JavaScript</p>
+                </div>
+                <div class="technology-icon flex flex-col items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                        <img src="assets/bootstrap.png" alt="">
+                    </div>
+                    <p class="text-center">Bootstrap</p>
+                </div>
+                <div class="technology-icon flex flex-col items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                        <img src="assets/python.png" alt="">
+                    </div>
+                    <p class="text-center">Python</p>
+                </div>
+                <div class="technology-icon flex flex-col items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                        <img src="assets/django.png" alt="">
+                    </div>
+                    <p class="text-center">Django</p>
+                </div>
+                <div class="technology-icon flex flex-col items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                        <img src="assets/git.png" alt="">
+                    </div>
+                    <p class="text-center">Git</p>
+                </div>
+                <div class="technology-icon flex flex-col items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4">
+                        <img src="assets/github.png" alt="">
+                    </div>
+                    <p class="text-center">GitHub</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-blue-400">Nuestros Proyectos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Proyecto 1 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/JSilvaIngieneria.jpeg"  class="w-full  object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">J Silva Ingieneria</h3>
+                        <p class="text-gray-300 text-justify mb-4">Proyecto de sitio web y tienda virtual para J Silva Ingeniería, empresa que brinda servicios destinados a la limpieza, seguridad y bienestar de hogares y empresas.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/donde_alejo.jpeg" class="w-full  object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Donde Alejo</h3>
+                        <p class="text-gray-300 text-justify mb-4">Donde Alejo es el lugar perfecto para disfrutar de deliciosos desayunos, almuerzos caseros, café de calidad y comidas rápidas irresistibles, asegurando el mejor servicio y satisfacción para nuestros clientes.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/torres_fit.jpeg"  class="w-full object-cover" style="height: 55.5%;">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Torres Fit</h3>
+                        <p class="text-gray-300 text-justify mb-4">Tienda virtual para el Gimnasio TorresFit, sirviendo como mano amiga de este mismo.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/kumbre.jpeg" class="w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">La Kumbre</h3>
+                        <p class="text-gray-300 text-justify mb-4">Proyecto la Kumbre del Huila, empresa de turismo, esta tienda virtual te permite reservar cabañas, iniciar sesión, comprar productos, enviar sugerencias y explorar spots fotográficos.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/tienda_luigui.png" alt="Proyecto 2" class="w-full ">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Tienda LuiGui</h3>
+                        <p class="text-gray-300 text-justify mb-4">E-commerce para una tienda de barrio, esta servira para automatizar funciones de ventas a la dueña y para ofrecer productos de la canasta familiar a hogares del Pital y Agrado.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/urban_style.jpeg" alt="Proyecto 2" class="w-full  object-cover" style="height: 57.5%;">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Urban Style</h3>
+                        <p class="text-gray-300 text-justify mb-4">Tienda virtual de ropa que ofreces la mejor calidad en productos de moda 
+                            Nuestras tienda virtual permite explorar y comprar desde el hogar a nuestros clientes.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 7 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
+                            administrativo.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 8 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
+                            administrativo.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 9 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
+                            administrativo.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 10 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
+                            administrativo.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 11 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
+                            administrativo.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 12 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
+                            administrativo.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 13 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
+                            administrativo.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 14 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
+                            administrativo.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <img src="assets/logoSena.png" class="h-10 mx-auto md:mx-0 mb-4" alt="Logo SENA">
+                    <h2 class="text-2xl font-bold text-blue-400">ADSO 2774163</h2>
+                    <p class="text-gray-400 mt-2">Análisis y Desarrollo de Software</p>
+                </div>
+
+                <div class="hidden md:block h-20 w-px bg-gray-700 mx-8"></div>
+
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <h3 class="text-lg font-semibold text-white mb-3">Enlaces rápidos</h3>
+                    <div class="flex flex-col space-y-2">
+                        <a href="#inicio" class="text-gray-400 hover:text-blue-400 transition duration-300">Inicio</a>
+                        <a href="#instructores"
+                            class="text-gray-400 hover:text-blue-400 transition duration-300">Instructores</a>
+                        <a href="#tecnologias"
+                            class="text-gray-400 hover:text-blue-400 transition duration-300">Tecnologías</a>
+                        <a href="#proyectos"
+                            class="text-gray-400 hover:text-blue-400 transition duration-300">Proyectos</a>
+                    </div>
+                </div>
+
+                <div class="hidden md:block h-20 w-px bg-gray-700 mx-8"></div>
+
+                <div class="flex sm:flex flex-col gap-5">
+                    <p class="text-gray-400">© 2025 ADSO 2774163. <br class="md:hidden">Todos los derechos reservados.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-10">
+        <a href="#inicio"
+            class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+            </svg>
+        </a>
+    </div>
+
+    <script src="script.js">
+    </script>
+</body>
+
+</html>
