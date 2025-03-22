@@ -67,17 +67,17 @@
     </nav>
 
     <section id="inicio" class="relative min-h-screen pt-16 ">
-        <div x-data="{ activeSlide: 0, slides: [0, 1, 2, 3], autoplay: null }"
+        <div x-data="{ activeSlide: 0, slides: [0, 1, 2, 3, 4], autoplay: null }"
             x-init="autoplay = setInterval(() => { activeSlide = activeSlide === slides.length - 1 ? 0 : activeSlide + 1 }, 5000)"
             class="relative h-screen overflow-hidden">
-    
+
             <div class="flex flex-col md:flex-row h-full">
                 <div class="w-full md:w-2/6 bg-gray-900 h-full flex items-center p-6 md:p-12">
                     <div class="flex flex-col max-w-lg mx-auto md:mx-0">
                         <div class="inline-block bg-blue-500 px-4 py-1 rounded-full mb-3">
                             <p class="text-white text-sm font-medium">Proyectos ADSO 2774163</p>
                         </div>
-                        
+
                         <h2 class="text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
                             Bienvenidos a nuestros proyectos
                             de Análisis y Desarrollo de software
@@ -98,11 +98,11 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="hidden md:block absolute left-1/3 h-full w-16 z-10" 
+
+                <div class="hidden md:block absolute left-1/3 h-full w-16 z-10"
                     style="background: linear-gradient(to right, rgba(17, 24, 39, 1), rgba(17, 24, 39, 0)); transform: translateX(-50%);">
                 </div>
-                
+
                 <div class="hidden md:block w-full md:w-4/6 h-full relative overflow-hidden">
                     <div class="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
                     <!-- Imagen 1 -->
@@ -133,9 +133,16 @@
                         x-transition:leave-end="opacity-0" class="absolute inset-0 h-full w-full">
                         <img src="assets/sanpedro.jpeg" class="object-cover h-full w-full" alt="Proyecto 4">
                     </div>
+                    <!-- Imagen 5 -->
+                    <div x-show="activeSlide === 4" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+                        x-transition:leave-end="opacity-0" class="absolute inset-0 h-full w-full">
+                        <img src="assets/cumpleaños_instru.jpeg" class="object-cover h-full w-full" alt="Proyecto 1">
+                    </div>
                 </div>
             </div>
-    
+
             <div class="absolute bottom-4 left-0 right-0 hidden md:flex justify-center space-x-3 z-20">
                 <template x-for="(slide, index) in slides" :key="index">
                     <button @click="activeSlide = index"
@@ -231,22 +238,28 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Proyecto 1 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="assets/Fotos_Proyectos/JSilvaIngieneria.jpeg"  class="w-full  object-cover">
+                    <img src="assets/Fotos_Proyectos/JSilvaIngieneria.jpeg" class="w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">J Silva Ingieneria</h3>
-                        <p class="text-gray-300 text-justify mb-4">Proyecto de sitio web y tienda virtual para J Silva Ingeniería, empresa que brinda servicios destinados a la limpieza, seguridad y bienestar de hogares y empresas.</p>
+                        <p class="text-gray-300 text-justify mb-4">Proyecto de sitio web y tienda virtual para J Silva
+                            Ingeniería, empresa que brinda servicios destinados a la limpieza, seguridad y bienestar de
+                            hogares y empresas.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
                     </div>
                 </div>
+                
+                
 
                 <!-- Proyecto 2 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
                     <img src="assets/Fotos_Proyectos/donde_alejo.jpeg" class="w-full  object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Donde Alejo</h3>
-                        <p class="text-gray-300 text-justify mb-4">Donde Alejo es el lugar perfecto para disfrutar de deliciosos desayunos, almuerzos caseros, café de calidad y comidas rápidas irresistibles, asegurando el mejor servicio y satisfacción para nuestros clientes.</p>
+                        <p class="text-gray-300 text-justify mb-4">Donde Alejo es el lugar perfecto para disfrutar de
+                            deliciosos desayunos, almuerzos caseros, café de calidad y comidas rápidas irresistibles,
+                            asegurando el mejor servicio y satisfacción para nuestros clientes.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -255,10 +268,11 @@
 
                 <!-- Proyecto 3 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="assets/Fotos_Proyectos/torres_fit.jpeg"  class="w-full object-cover" style="height: 55.5%;">
+                    <img src="assets/Fotos_Proyectos/torres_fit.jpeg" class="w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Torres Fit</h3>
-                        <p class="text-gray-300 text-justify mb-4">Tienda virtual para el Gimnasio TorresFit, sirviendo como mano amiga de este mismo.</p>
+                        <p class="text-gray-300 text-justify mb-4">Tienda virtual para el Gimnasio TorresFit, sirviendo
+                            como mano amiga de este mismo.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -270,7 +284,9 @@
                     <img src="assets/Fotos_Proyectos/kumbre.jpeg" class="w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">La Kumbre</h3>
-                        <p class="text-gray-300 text-justify mb-4">Proyecto la Kumbre del Huila, empresa de turismo, esta tienda virtual te permite reservar cabañas, iniciar sesión, comprar productos, enviar sugerencias y explorar spots fotográficos.</p>
+                        <p class="text-gray-300 text-justify mb-4">Proyecto la Kumbre del Huila, empresa de turismo,
+                            esta tienda virtual te permite reservar cabañas, iniciar sesión, comprar productos, enviar
+                            sugerencias y explorar spots fotográficos.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -279,10 +295,12 @@
 
                 <!-- Proyecto 5 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="assets/Fotos_Proyectos/tienda_luigui.png" alt="Proyecto 2" class="w-full ">
+                    <img src="assets/Fotos_Proyectos/tienda_luigui.png" class="w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Tienda LuiGui</h3>
-                        <p class="text-gray-300 text-justify mb-4">E-commerce para una tienda de barrio, esta servira para automatizar funciones de ventas a la dueña y para ofrecer productos de la canasta familiar a hogares del Pital y Agrado.</p>
+                        <p class="text-gray-300 text-justify mb-4">E-commerce para una tienda de barrio, esta servira
+                            para automatizar funciones de ventas a la dueña y para ofrecer productos de la canasta
+                            familiar a hogares del Pital y Agrado.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -291,10 +309,11 @@
 
                 <!-- Proyecto 6 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="assets/Fotos_Proyectos/urban_style.jpeg" alt="Proyecto 2" class="w-full  object-cover" style="height: 57.5%;">
+                    <img src="assets/Fotos_Proyectos/urban_style.jpeg" class="w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Urban Style</h3>
-                        <p class="text-gray-300 text-justify mb-4">Tienda virtual de ropa que ofreces la mejor calidad en productos de moda 
+                        <p class="text-gray-300 text-justify mb-4">Tienda virtual de ropa que ofreces la mejor calidad
+                            en productos de moda
                             Nuestras tienda virtual permite explorar y comprar desde el hogar a nuestros clientes.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
@@ -304,11 +323,10 @@
 
                 <!-- Proyecto 7 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <img src="assets/Fotos_Proyectos/san_felipe.jpeg" class="w-full object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
-                            administrativo.</p>
+                        <h3 class="text-xl font-bold mb-2">San Felipe</h3>
+                        <p class="text-gray-300 text-justify mb-4">Tienda virtual San Felipe, permite a los clientes realizar pedidos en línea, reservar mesas y ver el menú. La plataforma cuenta con una interfaz intuitiva, opciones de pago y un sistema de gestión de usuarios para mejorar la experiencia del cliente.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -317,11 +335,12 @@
 
                 <!-- Proyecto 8 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <img src="assets/Fotos_Proyectos/matiz_color.jpeg" class="w-full object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
-                            administrativo.</p>
+                        <h3 class="text-xl font-bold mb-2">Matiz Color</h3>
+                        <p class="text-gray-300 text-justify mb-4">Matiz Color tienda virtual de ropa pintada a mano que
+                            inspira y empodera a mujeres y niñas a través de diseños únicos y vibrantes, fusionando arte
+                            y moda para expresar autenticidad y confianza.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -330,11 +349,12 @@
 
                 <!-- Proyecto 9 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <img src="assets/Fotos_Proyectos/casa_kolor1.png" class="w-full object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
-                            administrativo.</p>
+                        <h3 class="text-xl font-bold mb-2">Casa Kolor</h3>
+                        <p class="text-gray-300 text-justify mb-4">Casakolor1 te ofrece pinturas de calidad para tu
+                            hogar, acabados especiales y herramientas eléctricas para tus proyectos. Todo lo que
+                            necesitas para renovar y embellecer tus espacios. </p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -343,11 +363,10 @@
 
                 <!-- Proyecto 10 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <img src="assets/Fotos_Proyectos/valhalla_bar.jpeg" class="w-full object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
-                            administrativo.</p>
+                        <h3 class="text-xl font-bold mb-2">Valhalla</h3>
+                        <p class="text-gray-300 text-justify mb-4">La tienda virtual de Valhalla permite a los usuarios registrarse, hacer reservas de mesas, explorar el menú, realizar pedidos en línea y dejar opiniones sobre los productos.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -356,11 +375,10 @@
 
                 <!-- Proyecto 11 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <img src="assets/Fotos_Proyectos/chok_dog.jpeg" class="w-full  object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
-                            administrativo.</p>
+                        <h3 class="text-xl font-bold mb-2">Chok Dog</h3>
+                        <p class="text-gray-300 text-justify mb-4">La tienda virtual chok dog está estructurada con las funcionalidades necesarias para la venta y promocion de los productos disponibles del establecimiento comercial.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -369,11 +387,10 @@
 
                 <!-- Proyecto 12 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <img src="assets/Fotos_Proyectos/veter_producciones.jpeg"  class="w-full object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
-                            administrativo.</p>
+                        <h3 class="text-xl font-bold mb-2">Veter Producciones</h3>
+                        <p class="text-gray-300 text-justify mb-4">Proporcionamos soluciones profesionales en sonido e iluminación para tus eventos.¡Haz que cada momento sea inolvidable!</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -382,11 +399,10 @@
 
                 <!-- Proyecto 13 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <img src="assets/Fotos_Proyectos/buenavida.png" class="w-full object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
-                            administrativo.</p>
+                        <h3 class="text-xl font-bold mb-2">Buenavida</h3>
+                        <p class="text-gray-300 text-justify mb-4">Buenavida es un negocio de bisutería que ofrece accesorios elegantes y femeninos para realzar tu estilo en cualquier ocasión. Diseñamos piezas únicas con materiales de calidad, pensando en quienes buscan belleza y exclusividad en cada detalle.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -395,11 +411,58 @@
 
                 <!-- Proyecto 14 -->
                 <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
-                    <img src="/api/placeholder/400/225" alt="Proyecto 2" class="w-full h-48 object-cover">
+                    <img src="assets/Fotos_Proyectos/paint_works.jpeg" class="w-full object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-                        <p class="text-gray-300 mb-4">Tienda en línea con carrito de compras, pasarela de pagos y panel
-                            administrativo.</p>
+                        <h3 class="text-xl font-bold mb-2">Paint Works</h3>
+                        <p class="text-gray-300 text-justify mb-4">ofrecemos servicios de pintura automotriz, garantizando acabados duraderos y personalizados. En nuestra tienda virtual, los clientes pueden conocer nuestros servicios, solicitar cotizaciones y ver productos especializados.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 15 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/cinema_andes.jpeg" class="w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cinema Los Andes</h3>
+                        <p class="text-gray-300 text-justify mb-4">Disfruta de la mejor calidad de imagen y sonido envolvente que te transporta al corazón de cada historia. Nuestras cómodas butacas y un ambiente acogedor están diseñados para que vivas cada película como si fueras parte de ella.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 16 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/casa_mia.jpeg" class="w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Casa Mia</h3>
+                        <p class="text-gray-300 text-justify mb-4">Restaurante con un estilo acogedor y moderno que combina buena comida con el ambiente relajado. Ideal para disfrutar tanto de una cena como de unas cervezas con amigos. Perfecto para quienes buscan sabor y buen ambiente en un solo lugar.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 17 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/sabrosuras_huila.jpeg" class="w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Sabrosuras del Huila</h3>
+                        <p class="text-gray-300 text-justify mb-4">Sabrosuras del Huila es un emprendimiento dedicado a la venta y promoción de productos típicos de la región, como bizcochos, galletas, roscas, suspiros y muchas más delicias tradicionales.</p>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
+                            Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 18 -->
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="assets/Fotos_Proyectos/mama_susana.jpeg" class="w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Chocolate Mamá Susana</h3>
+                        <p class="text-gray-300 text-justify mb-4">La página web de Chocolate Mamá Susana promueve y vende chocolates artesanales elaborados con cacao de Huila, Colombia, destacando la tradición y el trabajo de familias campesinas locales.</p>
                         <a href="#"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded inline-block transition duration-300">Ver
                             Proyecto</a>
@@ -434,20 +497,19 @@
                 </div>
 
                 <div class="hidden md:block h-20 w-px bg-gray-700 mx-8"></div>
-
-                <div class="flex sm:flex flex-col gap-5">
-                    <p class="text-gray-400">© 2025 ADSO 2774163. <br class="md:hidden">Todos los derechos reservados.
-                    </p>
-                    <div class="flex justify-center md:justify-start space-x-4 mb-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
+                    <div class="flex sm:flex flex-col gap-5">
+                        <div class="footer-content">
+                            <p class="text-gray-400">© 2025 ADSO 2774163. Todos los derechos reservados.</p>
+                            <a href="https://github.com/SamuelLemos01/Landing-ADSO-2774163"
+                                class="text-gray-400 hover:text-white transition duration-300">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
