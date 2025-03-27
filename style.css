@@ -75,7 +75,7 @@ footer .linea {
     }
     
     .project-card img {
-        height: 180px;
+        height: 70%;
     }
 }
 @media (max-width: 768px) {
